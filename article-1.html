@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Recommended Method For Setting Up Your Monero Wallet - XMR.EE</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container article-page">
+        <header>
+            <h1 class="typewriter"></h1>
+            <div class="author-badge">DISCORD: @chester.pdf</div>
+        </header>
+
+        <article>
+            <div class="article-header">
+                <span class="article-category">MONERO SETUP</span>
+                <h1>My Recommended Method For Setting Up Your Monero Wallet</h1>
+            </div>
+
+            <div class="article-image">
+                <img src="images/article-1.gif" alt="Monero wallet setup guide">
+            </div>
+
+            <div class="article-content">
+                <p>I recommend downloading the official Monero GUI Wallet. Then download and sync the entire blockchain, which takes around 3 days if you leave your computer running overnight. Then install Whonix, which is a torrified Debian VM. Then place the blockchain folder, the one with the LMDB database, into a folder which you specify as a shared folder for Whonix Workstation. Then download the Monero GUI Wallet for Whonix Workstation. Then go into settings and specify the location of the blockchain file in the shared folder. Then let the wallet sync to the latest block. Now you can finally use your Monero wallet.</p>
+
+                <p>Later on, if you have not synced it for several days or longer, sync the blockchain outside of Whonix first so it catches up faster, then open the wallet inside Whonix once it is fully synced.</p>
+
+                <p>I recommend this setup for several reasons. First, you need to use a full blockchain because a remote node can match transactions with IPs, and Chainalysis and others are notorious for setting up multiple remote nodes. Second, prior to 2020, the first node to receive your broadcast could match the transaction with your IP. However, in 2020 Dandelion++ was implemented, which made the transaction travel a random path over a random number of nodes and then broadcast. However, Chainalysis is known to operate multiple nodes. If they operate a large percentage of the nodes, it could be the case that all the hops are nodes they control, thereby bypassing Dandelion++ and matching the transaction with your IP. So to thwart this, you need to use a Tor IP, which is why we use Whonix.</p>
+
+                <p>The reason we download and sync the blockchain outside of Whonix is practical. The blockchain is 250 GB+, and if you download it directly inside Whonix it will go through Tor and could take weeks or even months due to the size. Downloading it outside of Whonix is significantly faster. I do not believe downloading it outside of Whonix has meaningful privacy consequences, since you are only downloading public blockchain data and not broadcasting any transactions at that stage.</p>
+
+                <p>One question could be, well can't I just use a VPN and not have to mess around with Whonix. While that might be slightly easier to set up, you are putting all your trust in the VPN. The VPN company might be dishonest and give all their information to Chainalysis or law enforcement for whatever reason. Or they may have been served legal papers forcing them to do so. Why even take the risk. Give yourself the peace of mind and use Tor and Whonix.</p>
+
+                <p>Lastly, one way Chainalysis, TRM, and others try to track you is by using metadata. This includes but is not limited to packet headers and timing information, P2P protocol message types, handshake fields including network ID and peer ID, peer list details like IP address and port, optional fields such as pruning seed and RPC settings, connection counts and durations, timed sync and ping patterns, node identifiers, subnet grouping, and Autonomous System affiliation derived from IP addresses. Therefore it is best to use the most popular Monero wallet, the Monero GUI Wallet, and not change the parameters of the wallet. If you wanted to be even more advanced, you could rent a VPS which you exclusively access via Whonix and pay for it using XMR. Then download the Monero GUI Wallet there with the full blockchain. Then run multiple VPNs. Then when it comes time to do your transaction, you use a mixture of Whonix and the VPS plus VPN setup to randomize things a bit more, so that Chainalysis is not seeing the same thing all the time.</p>
+            </div>
+
+            <div class="article-footer">
+                <a href="index.html" class="back-btn">Back to Home</a>
+            </div>
+        </article>
+    </div>
+</body>
+</html>
